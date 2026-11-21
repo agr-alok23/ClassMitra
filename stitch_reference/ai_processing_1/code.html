@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ClassMitra AI Processing</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: #f7f9fb;
+            overflow: hidden; /* Focused task screen */
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+
+        /* Ambient Glow Animation */
+        .ambient-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, rgba(100, 94, 251, 0.05) 50%, rgba(247, 249, 251, 0) 100%);
+            filter: blur(60px);
+            border-radius: 50%;
+            z-index: -1;
+            animation: pulse-glow 8s infinite alternate ease-in-out;
+        }
+
+        @keyframes pulse-glow {
+            0% { transform: translate(-10%, -10%) scale(1); opacity: 0.5; }
+            100% { transform: translate(10%, 10%) scale(1.2); opacity: 0.8; }
+        }
+
+        /* Circular Progress Animation */
+        .progress-ring__circle {
+            transition: stroke-dashoffset 0.35s;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+            stroke-dasharray: 339.292; /* 2 * PI * r */
+        }
+
+        @keyframes rotate-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .rotating {
+            animation: rotate-slow 3s linear infinite;
+        }
+
+        /* Pulse for Processing State */
+        .status-pulse {
+            animation: status-pulse-anim 2s infinite ease-in-out;
+        }
+
+        @keyframes status-pulse-anim {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.5; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Glassmorphism utility */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary": "#4b41e1",
+                      "on-surface": "#191c1e",
+                      "on-primary-container": "#eeefff",
+                      "inverse-surface": "#2d3133",
+                      "primary-container": "#2563eb",
+                      "secondary-fixed": "#e2dfff",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "outline-variant": "#c3c6d7",
+                      "surface-container-lowest": "#ffffff",
+                      "background": "#f7f9fb",
+                      "on-secondary-fixed": "#0f0069",
+                      "surface-container": "#eceef0",
+                      "inverse-primary": "#b4c5ff",
+                      "surface-variant": "#e0e3e5",
+                      "tertiary-container": "#007d55",
+                      "surface-bright": "#f7f9fb",
+                      "primary-fixed": "#dbe1ff",
+                      "on-tertiary-container": "#bdffdb",
+                      "on-tertiary": "#ffffff",
+                      "tertiary": "#006242",
+                      "on-tertiary-fixed-variant": "#005236",
+                      "on-primary-fixed": "#00174b",
+                      "error-container": "#ffdad6",
+                      "secondary-container": "#645efb",
+                      "on-primary": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "on-error-container": "#93000a",
+                      "on-secondary-container": "#fffbff",
+                      "surface": "#f7f9fb",
+                      "tertiary-fixed": "#6ffbbe",
+                      "on-secondary-fixed-variant": "#3323cc",
+                      "surface-tint": "#0053db",
+                      "on-tertiary-fixed": "#002113",
+                      "primary": "#004ac6",
+                      "on-surface-variant": "#434655",
+                      "on-error": "#ffffff",
+                      "secondary-fixed-dim": "#c3c0ff",
+                      "error": "#ba1a1a",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "surface-container-highest": "#e0e3e5",
+                      "surface-container-high": "#e6e8ea",
+                      "surface-container-low": "#f2f4f6",
+                      "on-background": "#191c1e",
+                      "surface-dim": "#d8dadc",
+                      "inverse-on-surface": "#eff1f3",
+                      "outline": "#737686",
+                      "tertiary-fixed-dim": "#4edea3"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "4px",
+                      "lg": "24px",
+                      "xs": "4px",
+                      "2xl": "48px",
+                      "xl": "32px",
+                      "margin-desktop": "32px",
+                      "sm": "8px",
+                      "margin-mobile": "16px",
+                      "md": "16px",
+                      "gutter": "16px"
+              },
+              "fontFamily": {
+                      "title-lg": ["Inter"],
+                      "title-md": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "label-lg": ["Inter"],
+                      "headline-md": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-sm": ["Inter"],
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "title-lg": ["22px", {"lineHeight": "28px", "fontWeight": "500"}],
+                      "title-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0.15px", "fontWeight": "500"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1px", "fontWeight": "500"}],
+                      "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                      "display-lg": ["57px", {"lineHeight": "64px", "letterSpacing": "-0.25px", "fontWeight": "700"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                      "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500"}],
+                      "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.25px", "fontWeight": "400"}],
+                      "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0.5px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col min-h-screen">
+<!-- Top App Bar (Restricted context - No Navigation Shell) -->
+<header class="h-16 w-full max-w-7xl mx-auto flex items-center justify-between px-margin-mobile relative z-10">
+<div class="flex items-center gap-3">
+<span class="font-headline-sm text-headline-sm font-bold text-primary">ClassMitra</span>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-variant/50 transition-colors active:scale-95">
+<span class="material-symbols-outlined text-on-surface-variant">close</span>
+</button>
+</header>
+<!-- Main Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center relative px-margin-mobile py-xl overflow-hidden">
+<!-- Background Animations -->
+<div class="ambient-glow -top-20 -left-20"></div>
+<div class="ambient-glow bottom-0 right-0" style="animation-delay: -4s;"></div>
+<div class="max-w-md w-full flex flex-col items-center text-center space-y-xl z-10">
+<!-- Central Animation Component -->
+<div class="relative w-48 h-48 flex items-center justify-center">
+<!-- Circular Track -->
+<svg class="w-full h-full">
+<circle class="text-surface-container-highest" cx="96" cy="96" fill="none" r="54" stroke="currentColor" stroke-width="8"></circle>
+<!-- Progress Circle -->
+<circle class="progress-ring__circle" cx="96" cy="96" fill="none" id="main-progress" r="54" stroke="url(#gradient)" stroke-linecap="round" stroke-width="8" style="stroke-dashoffset: 160;"></circle>
+<defs>
+<lineargradient id="gradient" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#2563eb"></stop>
+<stop offset="100%" stop-color="#4b41e1"></stop>
+</lineargradient>
+</defs>
+</svg>
+<!-- Inner AI Icon with pulse -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="bg-secondary-container w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg transform rotate-45">
+<span class="material-symbols-outlined text-on-secondary-container text-4xl -rotate-45" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+</div>
+<!-- Decorative Orbiting Elements -->
+<div class="absolute w-full h-full rotating">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 bg-primary rounded-full shadow-md"></div>
+</div>
+</div>
+<!-- Header Text -->
+<div class="space-y-2">
+<h1 class="font-headline-md text-headline-md text-on-surface">Curating your Lesson</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xs mx-auto">ClassMitra AI is transforming your content into interactive learning blocks.</p>
+</div>
+<!-- Steps List (Bento-lite Card) -->
+<div class="glass-card w-full rounded-2xl p-md space-y-4 text-left shadow-sm">
+<!-- Step 1: Done -->
+<div class="flex items-center gap-4 group">
+<div class="w-8 h-8 rounded-full bg-tertiary-container/20 flex items-center justify-center flex-shrink-0 transition-transform group-hover:scale-110">
+<span class="material-symbols-outlined text-tertiary text-lg font-bold">check</span>
+</div>
+<div class="flex-grow">
+<p class="font-title-md text-title-md text-on-surface leading-tight">Extracting text</p>
+<p class="font-label-md text-label-md text-tertiary">Done</p>
+</div>
+</div>
+<!-- Divider -->
+<div class="ml-12 border-t border-outline-variant/30"></div>
+<!-- Step 2: Processing -->
+<div class="flex items-center gap-4 group">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center flex-shrink-0 status-pulse">
+<span class="material-symbols-outlined text-on-primary-container text-lg animate-spin">sync</span>
+</div>
+<div class="flex-grow">
+<p class="font-title-md text-title-md text-on-surface leading-tight">Understanding content</p>
+<p class="font-label-md text-label-md text-primary">In progress...</p>
+</div>
+</div>
+<!-- Divider -->
+<div class="ml-12 border-t border-outline-variant/30"></div>
+<!-- Step 3: Pending -->
+<div class="flex items-center gap-4 group opacity-50">
+<div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-outline text-lg">circle</span>
+</div>
+<div class="flex-grow">
+<p class="font-title-md text-title-md text-on-surface leading-tight">Creating embeddings</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Pending</p>
+</div>
+</div>
+<!-- Divider -->
+<div class="ml-12 border-t border-outline-variant/30"></div>
+<!-- Step 4: Pending -->
+<div class="flex items-center gap-4 group opacity-50">
+<div class="w-8 h-8 rounded-full bg-surface-variant flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-outline text-lg">circle</span>
+</div>
+<div class="flex-grow">
+<p class="font-title-md text-title-md text-on-surface leading-tight">Generating learning material</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Pending</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Tip -->
+<footer class="p-margin-mobile text-center relative z-10">
+<div class="inline-flex items-center gap-2 px-4 py-2 bg-surface-container-high rounded-full">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Pro Tip: AI works best with clear headings in your files.</span>
+</div>
+</footer>
+<!-- Interactive script for progress simulation -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const circle = document.getElementById('main-progress');
+            const radius = circle.r.baseVal.value;
+            const circumference = radius * 2 * Math.PI;
+            
+            circle.style.strokeDasharray = `${circumference} ${circumference}`;
+            
+            function setProgress(percent) {
+                const offset = circumference - (percent / 100 * circumference);
+                circle.style.strokeDashoffset = offset;
+            }
+
+            // Simulate progress growth
+            let progress = 45;
+            const interval = setInterval(() => {
+                if (progress >= 100) {
+                    clearInterval(interval);
+                } else {
+                    progress += Math.random() * 2;
+                    if (progress > 100) progress = 100;
+                    setProgress(progress);
+                }
+            }, 300);
+
+            // Subtle interaction: Icon follows mouse slightly
+            document.addEventListener('mousemove', (e) => {
+                const icon = document.querySelector('.bg-secondary-container');
+                const xAxis = (window.innerWidth / 2 - e.pageX) / 40;
+                const yAxis = (window.innerHeight / 2 - e.pageY) / 40;
+                icon.style.transform = `rotate(45deg) translate(${xAxis}px, ${yAxis}px)`;
+            });
+        });
+    </script>
+</body></html>

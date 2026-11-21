@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quiz | ClassMitra</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#4b41e1",
+                        "on-surface": "#191c1e",
+                        "on-primary-container": "#eeefff",
+                        "inverse-surface": "#2d3133",
+                        "primary-container": "#2563eb",
+                        "secondary-fixed": "#e2dfff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "outline-variant": "#c3c6d7",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#f7f9fb",
+                        "on-secondary-fixed": "#0f0069",
+                        "surface-container": "#eceef0",
+                        "inverse-primary": "#b4c5ff",
+                        "surface-variant": "#e0e3e5",
+                        "tertiary-container": "#007d55",
+                        "surface-bright": "#f7f9fb",
+                        "primary-fixed": "#dbe1ff",
+                        "on-tertiary-container": "#bdffdb",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#006242",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "on-primary-fixed": "#00174b",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#645efb",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#fffbff",
+                        "surface": "#f7f9fb",
+                        "tertiary-fixed": "#6ffbbe",
+                        "on-secondary-fixed-variant": "#3323cc",
+                        "surface-tint": "#0053db",
+                        "on-tertiary-fixed": "#002113",
+                        "primary": "#004ac6",
+                        "on-surface-variant": "#434655",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#c3c0ff",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-container-low": "#f2f4f6",
+                        "on-background": "#191c1e",
+                        "surface-dim": "#d8dadc",
+                        "inverse-on-surface": "#eff1f3",
+                        "outline": "#737686",
+                        "tertiary-fixed-dim": "#4edea3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "2xl": "48px",
+                        "xl": "32px",
+                        "margin-desktop": "32px",
+                        "sm": "8px",
+                        "margin-mobile": "16px",
+                        "md": "16px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "title-lg": ["Inter"],
+                        "title-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "title-lg": ["22px", {"lineHeight": "28px", "fontWeight": "500"}],
+                        "title-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0.15px", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1px", "fontWeight": "500"}],
+                        "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "display-lg": ["57px", {"lineHeight": "64px", "letterSpacing": "-0.25px", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.25px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0.5px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; -webkit-tap-highlight-color: transparent; }
+        .option-card {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            border-bottom: 4px solid #e0e3e5;
+        }
+        .option-card:active {
+            transform: translateY(2px);
+            border-bottom-width: 2px;
+            margin-bottom: 2px;
+        }
+        .option-card.selected {
+            background-color: #e2dfff;
+            border-color: #4b41e1;
+            color: #0f0069;
+        }
+        .progress-fill {
+            transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col">
+<!-- Top AppBar (Simplified for Quiz Focus) -->
+<header class="bg-surface sticky top-0 z-50 flex items-center justify-between px-margin-mobile h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4 w-full">
+<button aria-label="Close Quiz" class="hover:bg-surface-variant/50 p-2 rounded-full transition-colors active:scale-95">
+<span class="material-symbols-outlined text-on-surface-variant">close</span>
+</button>
+<!-- Question Progress Bar -->
+<div class="flex-grow bg-surface-container-highest h-3 rounded-full overflow-hidden relative">
+<div class="progress-fill absolute top-0 left-0 h-full bg-tertiary w-[40%]" style="box-shadow: 0 0 10px rgba(0, 125, 85, 0.3);"></div>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-high px-3 py-1.5 rounded-full">
+<span class="material-symbols-outlined text-primary text-[20px]" data-weight="fill">schedule</span>
+<span class="font-label-lg text-label-lg text-on-surface" id="timer">02:45</span>
+</div>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center justify-center px-margin-mobile py-8 max-w-3xl mx-auto w-full">
+<!-- Question Header Section -->
+<div class="w-full mb-10 text-center md:text-left">
+<div class="inline-block bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-lg font-label-md text-label-md mb-4 tracking-wider">
+                QUESTION 4 OF 10
+            </div>
+<h1 class="font-headline-md text-headline-md-mobile md:text-headline-md text-on-surface leading-tight">
+                What is the primary function of chlorophyll in plants?
+            </h1>
+</div>
+<!-- Illustration/Visual (Subtle Bento-ish Pattern) -->
+<div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+<div class="relative rounded-2xl overflow-hidden aspect-[16/9] md:aspect-auto h-48 bg-tertiary-container flex items-center justify-center">
+<div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 20px 20px;"></div>
+<img class="w-full h-full object-cover" data-alt="A lush green leaf macro photography shot with visible cellular structures and glowing light particles representing energy absorption. The lighting is soft and ethereal, using deep emerald and bright lime greens, consistent with a professional educational theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBr5pZSxq0o_E-cqbEioK01ByYxlrUFrujxFnh7CQWLxI5QmqrVZ-YOAZtaJcY4OOQXUd20PC-ajK1rUi50HiTP3UyCxODPWsdNKoIlYqzK8BwHxaB48IPQUOF0zxJ543IEM-5nSW_FyJNtsNkJQv6W_Sjh7r1mHEXrbTU0IC2dQLwDnob5E78OrxLqvwm9pMz6UV6Kyj_NBfROwpjsukc3XAnBpmTVKrh4-jqt7VloO-TPClaZxab2kizuA5elNn116Lj_a-rKrrZ"/>
+</div>
+<div class="hidden md:flex flex-col justify-center p-6 bg-surface-container-low rounded-2xl border border-surface-variant">
+<p class="font-body-md text-body-md text-on-surface-variant italic">
+                    "This molecule is essential for photosynthesis, allowing plants to absorb energy from light."
+                </p>
+<div class="flex items-center gap-2 mt-4 text-tertiary">
+<span class="material-symbols-outlined text-[18px]">lightbulb</span>
+<span class="font-label-md text-label-md uppercase tracking-widest">Scientific Insight</span>
+</div>
+</div>
+</div>
+<!-- Options List -->
+<div class="w-full grid grid-cols-1 gap-4 mb-24" id="options-container">
+<button class="option-card group flex items-center p-4 md:p-5 rounded-xl bg-surface border-2 border-surface-variant hover:border-primary-container text-left w-full">
+<span class="w-10 h-10 flex items-center justify-center rounded-lg border-2 border-surface-variant group-hover:border-primary-container font-bold mr-4 text-on-surface-variant">A</span>
+<span class="font-body-lg text-body-lg text-on-surface">To strengthen the cell walls of the plant.</span>
+</button>
+<button class="option-card group flex items-center p-4 md:p-5 rounded-xl bg-surface border-2 border-surface-variant hover:border-primary-container text-left w-full" onclick="selectOption(this)">
+<span class="w-10 h-10 flex items-center justify-center rounded-lg border-2 border-surface-variant group-hover:border-primary-container font-bold mr-4 text-on-surface-variant">B</span>
+<span class="font-body-lg text-body-lg text-on-surface">To absorb light energy for photosynthesis.</span>
+</button>
+<button class="option-card group flex items-center p-4 md:p-5 rounded-xl bg-surface border-2 border-surface-variant hover:border-primary-container text-left w-full">
+<span class="w-10 h-10 flex items-center justify-center rounded-lg border-2 border-surface-variant group-hover:border-primary-container font-bold mr-4 text-on-surface-variant">C</span>
+<span class="font-body-lg text-body-lg text-on-surface">To transport water from the roots to the leaves.</span>
+</button>
+<button class="option-card group flex items-center p-4 md:p-5 rounded-xl bg-surface border-2 border-surface-variant hover:border-primary-container text-left w-full">
+<span class="w-10 h-10 flex items-center justify-center rounded-lg border-2 border-surface-variant group-hover:border-primary-container font-bold mr-4 text-on-surface-variant">D</span>
+<span class="font-body-lg text-body-lg text-on-surface">To protect the plant from pests and diseases.</span>
+</button>
+</div>
+</main>
+<!-- Bottom Action Bar (Sticky) -->
+<footer class="sticky bottom-0 bg-surface w-full border-t border-surface-variant py-4 px-margin-mobile">
+<div class="max-w-3xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="hidden md:flex items-center gap-3">
+<button class="flex items-center gap-2 text-on-surface-variant font-label-lg hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">flag</span>
+                    REPORT
+                </button>
+</div>
+<div class="w-full md:w-auto flex items-center gap-4">
+<button class="flex-1 md:flex-none px-8 h-12 rounded-xl border border-outline font-label-lg text-on-surface-variant hover:bg-surface-variant transition-colors active:scale-95">
+                    SKIP
+                </button>
+<button class="flex-1 md:flex-none px-12 h-12 rounded-xl bg-primary-container text-on-primary-container font-label-lg shadow-lg hover:brightness-110 active:scale-95 transition-all disabled:opacity-50 disabled:grayscale disabled:scale-100 disabled:cursor-not-allowed" disabled="" id="next-btn">
+                    NEXT
+                </button>
+</div>
+</div>
+</footer>
+<!-- Success Feedback Overlay (Hidden by Default) -->
+<div class="fixed inset-0 z-50 pointer-events-none flex items-end justify-center px-margin-mobile pb-24 opacity-0 transform translate-y-8 transition-all duration-300" id="feedback-overlay">
+<div class="glass-effect border border-tertiary/20 text-tertiary p-4 rounded-2xl flex items-center gap-4 shadow-2xl max-w-sm w-full">
+<div class="bg-tertiary-container text-on-tertiary-container p-2 rounded-full">
+<span class="material-symbols-outlined" data-weight="fill">check_circle</span>
+</div>
+<div>
+<p class="font-title-md text-title-md">Brilliant!</p>
+<p class="font-body-md text-body-md opacity-80">You're mastering biology.</p>
+</div>
+</div>
+</div>
+<script>
+        function selectOption(el) {
+            // Remove selection from all cards
+            document.querySelectorAll('.option-card').forEach(card => {
+                card.classList.remove('selected', 'border-secondary-container');
+                card.querySelector('span:first-child').classList.remove('bg-secondary-container', 'text-white', 'border-secondary-container');
+            });
+
+            // Add selection to clicked card
+            el.classList.add('selected', 'border-secondary-container');
+            const letterBox = el.querySelector('span:first-child');
+            letterBox.classList.add('bg-secondary-container', 'text-white', 'border-secondary-container');
+
+            // Enable next button
+            const nextBtn = document.getElementById('next-btn');
+            nextBtn.disabled = false;
+            
+            // Show micro-feedback
+            const feedback = document.getElementById('feedback-overlay');
+            feedback.classList.remove('opacity-0', 'translate-y-8');
+            feedback.classList.add('opacity-100', 'translate-y-0');
+            
+            setTimeout(() => {
+                feedback.classList.add('opacity-0', 'translate-y-8');
+                feedback.classList.remove('opacity-100', 'translate-y-0');
+            }, 2500);
+        }
+
+        // Simple Countdown Timer Logic
+        let seconds = 165; // 2:45
+        const timerEl = document.getElementById('timer');
+        
+        setInterval(() => {
+            if(seconds > 0) {
+                seconds--;
+                const m = Math.floor(seconds / 60);
+                const s = seconds % 60;
+                timerEl.textContent = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+                
+                if (seconds < 30) {
+                    timerEl.parentElement.classList.add('text-error', 'animate-pulse');
+                    timerEl.parentElement.classList.remove('text-on-surface');
+                }
+            }
+        }, 1000);
+    </script>
+</body></html>

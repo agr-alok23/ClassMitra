@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ClassMitra AI Chat</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#4b41e1",
+                        "on-surface": "#191c1e",
+                        "on-primary-container": "#eeefff",
+                        "inverse-surface": "#2d3133",
+                        "primary-container": "#2563eb",
+                        "secondary-fixed": "#e2dfff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "outline-variant": "#c3c6d7",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#f7f9fb",
+                        "on-secondary-fixed": "#0f0069",
+                        "surface-container": "#eceef0",
+                        "inverse-primary": "#b4c5ff",
+                        "surface-variant": "#e0e3e5",
+                        "tertiary-container": "#007d55",
+                        "surface-bright": "#f7f9fb",
+                        "primary-fixed": "#dbe1ff",
+                        "on-tertiary-container": "#bdffdb",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#006242",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "on-primary-fixed": "#00174b",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#645efb",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#fffbff",
+                        "surface": "#f7f9fb",
+                        "tertiary-fixed": "#6ffbbe",
+                        "on-secondary-fixed-variant": "#3323cc",
+                        "surface-tint": "#0053db",
+                        "on-tertiary-fixed": "#002113",
+                        "primary": "#004ac6",
+                        "on-surface-variant": "#434655",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#c3c0ff",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-container-low": "#f2f4f6",
+                        "on-background": "#191c1e",
+                        "surface-dim": "#d8dadc",
+                        "inverse-on-surface": "#eff1f3",
+                        "outline": "#737686",
+                        "tertiary-fixed-dim": "#4edea3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "2xl": "48px",
+                        "xl": "32px",
+                        "margin-desktop": "32px",
+                        "sm": "8px",
+                        "margin-mobile": "16px",
+                        "md": "16px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "title-lg": ["Inter"],
+                        "title-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "title-lg": ["22px", {"lineHeight": "28px", "fontWeight": "500"}],
+                        "title-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0.15px", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1px", "fontWeight": "500"}],
+                        "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "display-lg": ["57px", {"lineHeight": "64px", "letterSpacing": "-0.25px", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.25px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0.5px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f7f9fb; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for chat area */
+        .chat-scroll::-webkit-scrollbar { width: 4px; }
+        .chat-scroll::-webkit-scrollbar-track { background: transparent; }
+        .chat-scroll::-webkit-scrollbar-thumb { background: #e0e3e5; border-radius: 10px; }
+        
+        /* Message animation */
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-slide-up { animation: slideUp 0.3s ease-out forwards; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-on-background docked full-width top-0 z-40">
+<div class="flex items-center justify-between px-margin-mobile h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-variant flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="A professional studio portrait of a friendly female educator with warm lighting, wearing a smart casual blazer. The background is a soft-focus library with a modern, high-key lighting aesthetic using ClassMitra's primary blue and white color scheme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd60MkgXkowQ0Lj0NSoX4Ju78MUsHGi1HXanhqTzYs4AhS_v4YgvBuQj1r-jwazBY6cGOx1c9V2nUrHyrrZOLuwXUDJo7RU8b6zclTJTyUW1bLthgMFIOheeGh6Gv5gU5p_oExkhBYtQfaG05l-pz4Df1m_R1BmOV1_szzkcmQjqUue2hBG1Fg1Euk0r4ucMK7LqWvRHgHExllbxJxMbw4F1zxgnUMjcvQXrdJFMLJkF1azyFgyINYsRUv7jk2lTwewwdCVJFgT3xv"/>
+</div>
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed-dim">ClassMitra</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-surface-variant/50 dark:hover:bg-surface-variant/20 rounded-full transition-colors active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary">notifications</span>
+</button>
+<button class="p-2 hover:bg-surface-variant/50 dark:hover:bg-surface-variant/20 rounded-full transition-colors active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-primary">more_vert</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Chat Canvas -->
+<main class="flex-1 overflow-y-auto chat-scroll px-margin-mobile pt-4 pb-48 max-w-3xl mx-auto w-full">
+<!-- AI Greeting (Initial Context) -->
+<div class="mb-8 flex gap-4 animate-slide-up">
+<div class="w-8 h-8 rounded-lg bg-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container text-[20px]" style="font-variation-settings: 'FILL' 1;">bnagent</span>
+</div>
+<div class="max-w-[85%]">
+<p class="font-body-lg text-body-lg text-on-surface">Hello! I'm your ClassMitra AI tutor. How can I help you with your studies today?</p>
+</div>
+</div>
+<!-- User Message -->
+<div class="mb-8 flex flex-col items-end animate-slide-up" style="animation-delay: 0.2s;">
+<div class="bg-primary text-on-primary rounded-2xl rounded-tr-none px-4 py-3 max-w-[85%] shadow-sm">
+<p class="font-body-lg text-body-lg">Can you explain the Krebs cycle?</p>
+</div>
+</div>
+<!-- AI Detailed Response -->
+<div class="mb-8 flex gap-4 animate-slide-up" style="animation-delay: 0.5s;">
+<div class="w-8 h-8 rounded-lg bg-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container text-[20px]" style="font-variation-settings: 'FILL' 1;">bnagent</span>
+</div>
+<div class="max-w-[85%] space-y-4">
+<p class="font-body-lg text-body-lg text-on-surface">
+                    The **Krebs Cycle** (also known as the Citric Acid Cycle) is a key metabolic pathway that occurs in the **mitochondrial matrix**. It's the second stage of cellular respiration.
+                </p>
+<!-- Code-block style steps -->
+<div class="bg-surface-container-high rounded-xl p-4 font-mono text-sm border-l-4 border-secondary">
+<div class="space-y-3">
+<div>
+<span class="text-secondary font-bold">STEP 01:</span>
+<span class="text-on-surface"> Acetyl-CoA (2C) joins with Oxaloacetate (4C) to form **Citrate (6C)**.</span>
+</div>
+<div>
+<span class="text-secondary font-bold">STEP 02:</span>
+<span class="text-on-surface"> Citrate is oxidized, releasing **CO2** and forming **NADH**. Result: Alpha-ketoglutarate (5C).</span>
+</div>
+<div>
+<span class="text-secondary font-bold">STEP 03:</span>
+<span class="text-on-surface"> Another CO2 is released, more **NADH** and **ATP** (or GTP) are produced. Result: Succinate (4C).</span>
+</div>
+<div>
+<span class="text-secondary font-bold">STEP 04:</span>
+<span class="text-on-surface"> Oxidation continues, producing **FADH2** and a final **NADH** to regenerate Oxaloacetate.</span>
+</div>
+</div>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface">
+                    For every turn of the cycle, you get **3 NADH, 1 FADH2, and 1 ATP**. Since one glucose creates two Acetyl-CoA, the cycle turns twice per glucose molecule.
+                </p>
+<div class="flex gap-2">
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-full border border-outline-variant text-label-md font-label-md hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[16px]">thumb_up</span> Helpful
+                    </button>
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-full border border-outline-variant text-label-md font-label-md hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[16px]">content_copy</span> Copy
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Input Section -->
+<div class="fixed bottom-0 left-0 w-full bg-gradient-to-t from-background via-background to-transparent pt-10 pb-4 px-margin-mobile z-50">
+<div class="max-w-3xl mx-auto">
+<!-- Suggested Chips -->
+<div class="flex gap-2 overflow-x-auto pb-3 no-scrollbar">
+<button class="whitespace-nowrap px-4 py-2 rounded-xl bg-surface-container-high text-on-surface-variant font-label-lg text-label-lg hover:bg-primary-fixed transition-colors active:scale-95">
+                    Show me a diagram
+                </button>
+<button class="whitespace-nowrap px-4 py-2 rounded-xl bg-surface-container-high text-on-surface-variant font-label-lg text-label-lg hover:bg-primary-fixed transition-colors active:scale-95">
+                    Quiz me on this
+                </button>
+<button class="whitespace-nowrap px-4 py-2 rounded-xl bg-surface-container-high text-on-surface-variant font-label-lg text-label-lg hover:bg-primary-fixed transition-colors active:scale-95">
+                    Simplify for a 10-year-old
+                </button>
+</div>
+<!-- Input Bar -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-lg border border-outline-variant/30 flex flex-col p-2">
+<textarea class="w-full bg-transparent border-none focus:ring-0 resize-none font-body-lg text-body-lg py-2 px-3 min-h-[48px] max-h-32 chat-input" id="chatInput" placeholder="Ask anything..." rows="1"></textarea>
+<div class="flex items-center justify-between mt-1">
+<div class="flex items-center gap-1">
+<button class="p-2 text-on-surface-variant hover:bg-surface-variant rounded-full transition-colors active:scale-90" title="Attach document">
+<span class="material-symbols-outlined">attach_file</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-variant rounded-full transition-colors active:scale-90" title="Voice input">
+<span class="material-symbols-outlined">mic</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-variant rounded-full transition-colors active:scale-90" title="AI Tools">
+<span class="material-symbols-outlined">auto_awesome</span>
+</button>
+</div>
+<button class="w-10 h-10 rounded-xl bg-primary text-on-primary flex items-center justify-center hover:bg-primary-container transition-all active:scale-90 shadow-md">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+<p class="text-center text-[10px] text-outline mt-3 font-label-md">ClassMitra AI can make mistakes. Verify important info.</p>
+</div>
+</div>
+<!-- AI FAB (Contextual for Home, but hidden here per instructions to prioritize content canvas if focused task) -->
+<!-- However, the prompt mentioned interface like ChatGPT, which is a single-screen task. Nav suppressed. -->
+<script>
+        // Simple auto-expand for textarea
+        const textarea = document.getElementById('chatInput');
+        textarea.addEventListener('input', function() {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+        });
+
+        // Micro-interactions for chips
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function() {
+                if (this.innerText.includes('Simplify')) {
+                    // Logic for visual feedback
+                    console.log('Interacting with AI suggestion...');
+                }
+            });
+        });
+    </script>
+</body></html>

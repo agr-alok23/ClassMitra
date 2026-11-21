@@ -1,0 +1,36 @@
+# Android / Gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/app/build
+/captures
+.externalNativeBuild
+.cxx
+
+# Firebase config
+app/google-services.json
+
+# Secrets and environment variables
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# Cloudflare Worker secrets
+classmitra-backend/.dev.vars
+classmitra-backend/.env
+classmitra-backend/.env.*
+classmitra-backend/node_modules/
+
+# Logs
+*.log
+/.gradle/
+/.idea/
+/.vscode/

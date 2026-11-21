@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ClassMitra | Student Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#4b41e1",
+                    "on-surface": "#191c1e",
+                    "on-primary-container": "#eeefff",
+                    "inverse-surface": "#2d3133",
+                    "primary-container": "#2563eb",
+                    "secondary-fixed": "#e2dfff",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "outline-variant": "#c3c6d7",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#f7f9fb",
+                    "on-secondary-fixed": "#0f0069",
+                    "surface-container": "#eceef0",
+                    "inverse-primary": "#b4c5ff",
+                    "surface-variant": "#e0e3e5",
+                    "tertiary-container": "#007d55",
+                    "surface-bright": "#f7f9fb",
+                    "primary-fixed": "#dbe1ff",
+                    "on-tertiary-container": "#bdffdb",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#006242",
+                    "on-tertiary-fixed-variant": "#005236",
+                    "on-primary-fixed": "#00174b",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#645efb",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-secondary-container": "#fffbff",
+                    "surface": "#f7f9fb",
+                    "tertiary-fixed": "#6ffbbe",
+                    "on-secondary-fixed-variant": "#3323cc",
+                    "surface-tint": "#0053db",
+                    "on-tertiary-fixed": "#002113",
+                    "primary": "#004ac6",
+                    "on-surface-variant": "#434655",
+                    "on-error": "#ffffff",
+                    "secondary-fixed-dim": "#c3c0ff",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "surface-container-highest": "#e0e3e5",
+                    "surface-container-high": "#e6e8ea",
+                    "surface-container-low": "#f2f4f6",
+                    "on-background": "#191c1e",
+                    "surface-dim": "#d8dadc",
+                    "inverse-on-surface": "#eff1f3",
+                    "outline": "#737686",
+                    "tertiary-fixed-dim": "#4edea3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "4px",
+                    "lg": "24px",
+                    "xs": "4px",
+                    "2xl": "48px",
+                    "xl": "32px",
+                    "margin-desktop": "32px",
+                    "sm": "8px",
+                    "margin-mobile": "16px",
+                    "md": "16px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "title-lg": ["Inter"],
+                    "title-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "label-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "title-lg": ["22px", {"lineHeight": "28px", "fontWeight": "500"}],
+                    "title-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0.15px", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1px", "fontWeight": "500"}],
+                    "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "display-lg": ["57px", {"lineHeight": "64px", "letterSpacing": "-0.25px", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.25px", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0.5px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #f7f9fb;
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .custom-shadow {
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        .fab-shadow {
+            box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface pb-24 md:pb-0">
+<!-- Top App Bar -->
+<header class="bg-surface sticky top-0 z-40 w-full">
+<div class="flex items-center justify-between px-margin-mobile h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img class="w-full h-full object-cover" data-alt="A professional student profile portrait of a young adult, clean lighting, soft bokeh academic background, wearing a simple navy blue sweater, reflecting a modern, intelligent, and focused educational aesthetic with primary blue accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnFOC-dmvafgEtEV3ZKMLkOifOsrrQP6NDE7sfl_m6Su3FLgRzVOPBgwjZ9ZtHfK4Gpke9Qf3x5KpWbX2aI_y1OYr39tJt7jywKC6Faegxc6tabFiC5vF0GDm9eToHgFBQlJ5Ojq7KGxg5UUQqbvk_4T748NnzcYb6JHhrIAQlgsCFazniAA-Ah6qqAZGC_2c9t9NI14LiZjJTPIYVj2ZqA2HkBexHcOoNWNftIsdSciSIfUSca0yxcdTDcA8GYIOkOB4ASUbZktek"/>
+</div>
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary">ClassMitra</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center hover:bg-surface-variant/50 rounded-full transition-colors active:scale-95">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+</button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-6 space-y-8">
+<!-- Welcome Section & Summary -->
+<section class="flex flex-col md:flex-row gap-6">
+<div class="flex-1 space-y-2">
+<h2 class="font-headline-md text-headline-md text-on-surface">Hello, Aryan!</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Ready to master Computer Science today?</p>
+</div>
+</section>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Continue Learning: Large Bento Card -->
+<div class="md:col-span-8 bg-surface-container-lowest rounded-xl p-6 custom-shadow flex flex-col justify-between min-h-[240px] relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4">
+<span class="bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full font-label-md text-label-md">Last Opened</span>
+</div>
+<div class="space-y-4 relative z-10">
+<div class="w-12 h-12 bg-primary-fixed rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">terminal</span>
+</div>
+<div>
+<h3 class="font-title-lg text-title-lg text-on-surface">Data Structures & Algorithms</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Module 4: Advanced Graph Theory and BFS/DFS</p>
+</div>
+</div>
+<div class="mt-8 flex items-center gap-4 relative z-10">
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-label-lg text-label-lg hover:opacity-90 transition-opacity flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+                        Continue Learning
+                    </button>
+<span class="text-on-surface-variant font-label-md text-label-md">Page 42 of 120</span>
+</div>
+<!-- Subtle Background Graphic -->
+<div class="absolute -bottom-8 -right-8 opacity-5">
+<span class="material-symbols-outlined text-[160px]">book_2</span>
+</div>
+</div>
+<!-- Learning Progress: Square Bento Card -->
+<div class="md:col-span-4 bg-surface-container-lowest rounded-xl p-6 custom-shadow flex flex-col items-center justify-center text-center space-y-4">
+<h3 class="font-title-md text-title-md text-on-surface self-start w-full text-left">Learning Progress</h3>
+<div class="relative w-32 h-32">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-container-high" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary rounded-full transition-all duration-1000" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-dasharray="364.4" stroke-dashoffset="100" stroke-width="8"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-headline-sm text-headline-sm text-on-surface">72%</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Weekly Goal</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">3.5 hours studied today. Keep it up!</p>
+</div>
+<!-- AI Tools Grid: High-end Grid pattern -->
+<div class="md:col-span-12 space-y-4">
+<div class="flex justify-between items-center">
+<h3 class="font-title-lg text-title-lg text-on-surface">Study Toolkit</h3>
+<button class="text-primary font-label-lg text-label-lg hover:underline transition-all">View All Tools</button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<!-- Tool 1: AI Summary -->
+<button class="bg-surface-container-lowest p-4 rounded-xl custom-shadow hover:bg-secondary-fixed/30 transition-all group text-left flex flex-col gap-3">
+<div class="w-10 h-10 bg-secondary-container text-on-secondary-container rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">auto_stories</span>
+</div>
+<span class="font-title-md text-title-md text-on-surface">AI Summary</span>
+</button>
+<!-- Tool 2: Flashcards -->
+<button class="bg-surface-container-lowest p-4 rounded-xl custom-shadow hover:bg-secondary-fixed/30 transition-all group text-left flex flex-col gap-3">
+<div class="w-10 h-10 bg-tertiary-container text-on-tertiary-container rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">style</span>
+</div>
+<span class="font-title-md text-title-md text-on-surface">Flashcards</span>
+</button>
+<!-- Tool 3: Quiz -->
+<button class="bg-surface-container-lowest p-4 rounded-xl custom-shadow hover:bg-secondary-fixed/30 transition-all group text-left flex flex-col gap-3">
+<div class="w-10 h-10 bg-primary-container text-on-primary-container rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">quiz</span>
+</div>
+<span class="font-title-md text-title-md text-on-surface">Smart Quiz</span>
+</button>
+<!-- Tool 4: Ask AI -->
+<button class="bg-gradient-to-br from-secondary-container to-primary-container p-4 rounded-xl custom-shadow hover:brightness-110 transition-all group text-left flex flex-col gap-3">
+<div class="w-10 h-10 bg-white/20 text-white rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">bnagent</span>
+</div>
+<span class="font-title-md text-title-md text-white">Ask AI Mitra</span>
+</button>
+</div>
+</div>
+<!-- Recent Notes: List Layout -->
+<div class="md:col-span-12 space-y-4">
+<h3 class="font-title-lg text-title-lg text-on-surface">Recent Notes</h3>
+<div class="bg-surface-container-lowest rounded-xl custom-shadow divide-y divide-outline-variant/20">
+<!-- Note Item 1 -->
+<div class="flex items-center gap-4 p-4 hover:bg-surface-variant/20 transition-colors cursor-pointer group">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div class="flex-1">
+<h4 class="font-title-md text-title-md text-on-surface">Organic Chemistry Fundamentals</h4>
+<p class="font-label-md text-label-md text-on-surface-variant">Last edited: 2 hours ago • 15 pages</p>
+</div>
+<div class="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-8 h-8 rounded-full hover:bg-surface-variant flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+<button class="w-8 h-8 rounded-full hover:bg-surface-variant flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Note Item 2 -->
+<div class="flex items-center gap-4 p-4 hover:bg-surface-variant/20 transition-colors cursor-pointer group">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div class="flex-1">
+<h4 class="font-title-md text-title-md text-on-surface">Modern Indian History - Part 2</h4>
+<p class="font-label-md text-label-md text-on-surface-variant">Last edited: Yesterday • 8 pages</p>
+</div>
+<div class="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-8 h-8 rounded-full hover:bg-surface-variant flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+<button class="w-8 h-8 rounded-full hover:bg-surface-variant flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Note Item 3 -->
+<div class="flex items-center gap-4 p-4 hover:bg-surface-variant/20 transition-colors cursor-pointer group">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div class="flex-1">
+<h4 class="font-title-md text-title-md text-on-surface">Calculus: Integration Methods</h4>
+<p class="font-label-md text-label-md text-on-surface-variant">Last edited: 3 days ago • 24 pages</p>
+</div>
+<div class="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="w-8 h-8 rounded-full hover:bg-surface-variant flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</button>
+<button class="w-8 h-8 rounded-full hover:bg-surface-variant flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button: Contextual for New Note -->
+<button class="fixed bottom-24 right-6 md:bottom-8 md:right-8 w-14 h-14 bg-secondary-container text-on-secondary-container rounded-2xl fab-shadow flex items-center justify-center hover:scale-105 active:scale-95 transition-all z-40 group">
+<span class="material-symbols-outlined text-[24px]">add</span>
+<span class="absolute right-full mr-4 bg-on-surface text-surface text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">New Note</span>
+</button>
+<!-- Bottom Navigation Bar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-surface-container-low flex justify-around items-center px-2 pb-2 pt-3 rounded-t-xl shadow-md">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-5 py-1 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<!-- Library -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-5 py-1 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">book_2</span>
+<span class="font-label-md text-label-md">Library</span>
+</a>
+<!-- AI Tools -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-5 py-1 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">bnagent</span>
+<span class="font-label-md text-label-md">AI Tools</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-5 py-1 active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+<!-- Desktop Sidebar-style Navigation Simulation -->
+<div class="hidden md:flex fixed left-0 top-0 h-full w-20 bg-surface flex-col items-center py-8 gap-8 border-r border-outline-variant/10">
+<div class="text-primary font-bold text-2xl">CM</div>
+<div class="flex flex-col gap-6">
+<button class="w-12 h-12 rounded-xl bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined">home</span>
+</button>
+<button class="w-12 h-12 rounded-xl hover:bg-surface-variant/50 text-on-surface-variant flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined">book_2</span>
+</button>
+<button class="w-12 h-12 rounded-xl hover:bg-surface-variant/50 text-on-surface-variant flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined">bnagent</span>
+</button>
+<button class="w-12 h-12 rounded-xl hover:bg-surface-variant/50 text-on-surface-variant flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</div>
+<script>
+        // Simple interaction for progress ring animation on scroll/load
+        document.addEventListener('DOMContentLoaded', () => {
+            const circle = document.querySelector('circle.text-primary');
+            if (circle) {
+                // Triggered after a small delay to see the transition
+                setTimeout(() => {
+                    // dasharray is 364.4 (circumference). 72% done = 28% left.
+                    // 364.4 * 0.28 = 102 approx.
+                    circle.style.strokeDashoffset = "102";
+                }, 500);
+            }
+        });
+    </script>
+</body></html>

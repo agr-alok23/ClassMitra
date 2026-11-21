@@ -1,0 +1,9 @@
+name = "classmitra-backend"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+
+[vars]
+GROQ_TEXT_MODEL = "openai/gpt-oss-20b"
+GROQ_VISION_MODEL = "disabled"
+ENABLE_VISION = "false"
+FIREBASE_PROJECT_ID = "classmitra-9d938"

@@ -1,0 +1,81 @@
+<resources>
+    <string name="app_name">ClassMitra</string>
+    <string name="mascot_description">Mitra Mascot</string>
+    <string name="app_logo_description">App Logo</string>
+    <string name="tagline">Your AI Learning Companion</string>
+    <string name="powered_by_ai">Powered by Advanced AI Intelligence</string>
+    <string name="copyright_text">© 2025 ClassMitra. All rights reserved.</string>
+
+    <!-- Onboarding Screen 1 -->
+    <string name="onboarding_title_1">Hi! I\'m Mitra \uD83D\uDC4B</string>
+    <string name="onboarding_subtitle_1">Your AI Learning Companion</string>
+    <string name="onboarding_desc_1">I\'ll help you understand, revise, and remember your lessons.</string>
+
+    <!-- Onboarding Screen 2 -->
+    <string name="onboarding_title_2">Upload Your Notes</string>
+    <string name="onboarding_desc_2">Upload PDFs, PPTs, DOCX files and let me generate summaries, quizzes, and flashcards.</string>
+
+    <!-- Onboarding Screen 3 -->
+    <string name="onboarding_title_3">Study Smarter</string>
+    <string name="onboarding_desc_3">Ask Mitra questions anytime and make learning more interactive.</string>
+
+    <string name="btn_skip">Skip</string>
+    <string name="btn_next">Next</string>
+    <string name="btn_get_started">Get Started</string>
+
+    <!-- Register Screen -->
+    <string name="register_title">Create Account</string>
+    <string name="register_subtitle">Join ClassMitra to start your AI journey</string>
+    <string name="hint_full_name">Full Name</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="btn_create_account">Create Account</string>
+    <string name="already_have_account">Already have an account? </string>
+    <string name="login_now">Login</string>
+
+    <!-- Role Selection -->
+    <string name="role_selection_title">Choose Your Role</string>
+    <string name="role_selection_subtitle">How would you like to use ClassMitra?</string>
+    <string name="role_teacher">Teacher</string>
+    <string name="role_student">Student</string>
+    <string name="teacher_desc">Upload Notes, Generate AI Summaries, Create Quizzes, Manage Classes</string>
+    <string name="student_desc">Learn Smarter, Ask Mitra, Practice Quizzes, Track Progress</string>
+    <string name="btn_continue">Continue</string>
+
+    <!-- Teacher Dashboard -->
+    <string name="greeting_teacher">Good Morning \uD83D\uDC4B</string>
+    <string name="dashboard_subtitle">Welcome back! Ready to create today\'s learning materials?</string>
+    <string name="menu_upload">Upload Notes</string>
+    <string name="menu_summary">AI Summary</string>
+    <string name="menu_quiz">Quiz Generator</string>
+    <string name="menu_flashcards">Flashcards</string>
+    <string name="menu_chat">Ask Mitra</string>
+    <string name="menu_classroom">Classroom</string>
+    <string name="section_recent_uploads">Recent Uploads</string>
+    <string name="fab_ask_mitra">Ask Mitra</string>
+
+    <!-- Student Dashboard -->
+    <string name="greeting_student">Good Morning \uD83D\uDC4B</string>
+    <string name="student_dashboard_subtitle">Welcome back! Ready to learn today?</string>
+    <string name="menu_my_classes">My Classes</string>
+    <string name="menu_study_materials">Study Materials</string>
+    <string name="menu_my_progress">My Progress</string>
+    <string name="section_recent_study">Recent Study Materials</string>
+
+    <!-- Bottom Navigation -->
+    <string name="nav_classes">Classes</string>
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_uploads">Uploads</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- Flashcards -->
+    <string name="flashcard_topic_label">Topic: %1$s</string>
+    <string name="flashcard_source_notes">Source: Uploaded Notes</string>
+    <string name="error_no_notes">No notes available. Please enter a topic.</string>
+    <string name="ai_flashcards_loaded">AI Flashcards Loaded</string>
+    <string name="error_parse_ai_response">Failed to parse AI response</string>
+    <string name="flashcard_label_question">Question</string>
+    <string name="flashcard_label_answer">Answer</string>
+    <string name="flashcard_count">Flashcard %1$d of %2$d</string>
+    <string name="btn_finish">Finish</string>
+    <string name="btn_next_simple">Next</string>
+</resources>

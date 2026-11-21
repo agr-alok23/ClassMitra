@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ClassMitra - AI Summary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#4b41e1",
+                        "on-surface": "#191c1e",
+                        "on-primary-container": "#eeefff",
+                        "inverse-surface": "#2d3133",
+                        "primary-container": "#2563eb",
+                        "secondary-fixed": "#e2dfff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "outline-variant": "#c3c6d7",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#f7f9fb",
+                        "on-secondary-fixed": "#0f0069",
+                        "surface-container": "#eceef0",
+                        "inverse-primary": "#b4c5ff",
+                        "surface-variant": "#e0e3e5",
+                        "tertiary-container": "#007d55",
+                        "surface-bright": "#f7f9fb",
+                        "primary-fixed": "#dbe1ff",
+                        "on-tertiary-container": "#bdffdb",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#006242",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "on-primary-fixed": "#00174b",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#645efb",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-container": "#fffbff",
+                        "surface": "#f7f9fb",
+                        "tertiary-fixed": "#6ffbbe",
+                        "on-secondary-fixed-variant": "#3323cc",
+                        "surface-tint": "#0053db",
+                        "on-tertiary-fixed": "#002113",
+                        "primary": "#004ac6",
+                        "on-surface-variant": "#434655",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#c3c0ff",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-container-low": "#f2f4f6",
+                        "on-background": "#191c1e",
+                        "surface-dim": "#d8dadc",
+                        "inverse-on-surface": "#eff1f3",
+                        "outline": "#737686",
+                        "tertiary-fixed-dim": "#4edea3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "2xl": "48px",
+                        "xl": "32px",
+                        "margin-desktop": "32px",
+                        "sm": "8px",
+                        "margin-mobile": "16px",
+                        "md": "16px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "title-lg": ["Inter"],
+                        "title-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "title-lg": ["22px", {"lineHeight": "28px", "fontWeight": "500"}],
+                        "title-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0.15px", "fontWeight": "500"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1px", "fontWeight": "500"}],
+                        "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "display-lg": ["57px", {"lineHeight": "64px", "letterSpacing": "-0.25px", "fontWeight": "700"}],
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.25px", "fontWeight": "400"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0.5px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f7f9fb; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .ai-gradient-text {
+            background: linear-gradient(135deg, #004ac6 0%, #4b41e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .shimmer {
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite linear;
+        }
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24">
+<!-- Top Navigation Bar -->
+<header class="bg-surface docked full-width top-0 sticky z-50">
+<div class="flex items-center justify-between px-margin-mobile h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-3">
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-variant/50 rounded-full p-2 transition-colors active:scale-95">arrow_back</button>
+<h1 class="font-headline-sm text-headline-sm font-bold text-primary">ClassMitra</h1>
+</div>
+<div class="flex items-center gap-2">
+<div class="hidden md:flex items-center bg-secondary-container/10 px-3 py-1 rounded-full border border-secondary-container/20">
+<span class="material-symbols-outlined text-secondary text-sm mr-1" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="text-label-md font-label-md text-secondary">AI Summarizer</span>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-variant/50 rounded-full p-2 transition-colors active:scale-95">notifications</button>
+<div class="w-8 h-8 rounded-full bg-primary-fixed-dim border-2 border-surface overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a young educator with a friendly smile, set against a soft-focus classroom background with warm, natural lighting. The style is clean and modern, following the ClassMitra brand aesthetic of approachable intelligence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjlNX60ZPWaoW4J8kD4FtXriMGR7pa4URhxXOsbJNYaj7k7sJSMmmqVq33WpJWJ6biRpcsEf6Wa_uNTd7apP-ziZ90fDPO-nN4T-d3yccoPLTzD-Y2rRstYwyq9NyWITy7nA-rL8GALY9rS437w0fgyh9pH7tE8LWVqNz2cu6yOE-CLAcXT61-0jSkdjv8w5Afr7fhdUR3-cwJQwrNN6DyUG8lGaJr4zvcamvuHHqIArW9eleamKrAQfIY_EBFUCZuVKtmkZlGLWRc"/>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-margin-mobile pt-lg flex flex-col gap-lg">
+<!-- Header Actions Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<nav class="flex items-center gap-2 text-label-md font-label-md text-outline mb-1">
+<span>Library</span>
+<span class="material-symbols-outlined text-xs">chevron_right</span>
+<span>Biology</span>
+</nav>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Photosynthesis</h2>
+</div>
+<div class="flex items-center gap-sm">
+<button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container-low text-on-surface hover:bg-surface-container-high transition-all active:scale-95 border border-outline-variant/30">
+<span class="material-symbols-outlined text-[20px]">content_copy</span>
+<span class="text-label-lg font-label-lg">Copy</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container-low text-on-surface hover:bg-surface-container-high transition-all active:scale-95 border border-outline-variant/30">
+<span class="material-symbols-outlined text-[20px]">share</span>
+<span class="text-label-lg font-label-lg">Share</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-primary text-on-primary hover:shadow-lg transition-all active:scale-95">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+<span class="text-label-lg font-label-lg">Save</span>
+</button>
+</div>
+</div>
+<!-- Main AI Summary Bento Card -->
+<div class="relative w-full rounded-[2rem] overflow-hidden shadow-[0px_2px_8px_rgba(0,0,0,0.05)] bg-white border border-surface-variant/50">
+<!-- Decorative Accent -->
+<div class="absolute top-0 right-0 p-8 pointer-events-none opacity-10">
+<span class="material-symbols-outlined text-[120px] ai-gradient-text" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div class="p-8 md:p-12 relative z-10">
+<!-- AI Badge -->
+<div class="inline-flex items-center gap-2 mb-8 px-4 py-1.5 rounded-full bg-secondary-fixed/30 border border-secondary-fixed">
+<span class="material-symbols-outlined text-secondary animate-pulse text-[18px]" style="font-variation-settings: 'FILL' 1;">spark</span>
+<span class="text-label-md font-label-md text-secondary tracking-wide uppercase">AI-Generated Insights</span>
+</div>
+<!-- Summary Content -->
+<div class="space-y-8">
+<section>
+<h3 class="font-title-lg text-title-lg text-on-surface mb-3 flex items-center gap-2">
+<span class="w-1.5 h-6 bg-primary rounded-full"></span>
+                            Overview
+                        </h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                            Photosynthesis is the foundational biological process where green plants, algae, and some bacteria convert light energy into chemical energy. Using chlorophyll to capture sunlight, these organisms transform water and carbon dioxide into oxygen and energy-rich glucose, sustaining nearly all life on Earth.
+                        </p>
+</section>
+<!-- Key Points Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-variant">
+<h4 class="font-title-md text-title-md text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined">light_mode</span>
+                                Light-Dependent Reactions
+                            </h4>
+<ul class="space-y-3">
+<li class="flex gap-3 group">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed-dim mt-2.5 flex-shrink-0 group-hover:scale-150 transition-transform"></span>
+<p class="font-body-md text-body-md text-on-surface-variant">Occurs within the <span class="font-semibold text-on-surface">thylakoid membranes</span> of chloroplasts.</p>
+</li>
+<li class="flex gap-3 group">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed-dim mt-2.5 flex-shrink-0 group-hover:scale-150 transition-transform"></span>
+<p class="font-body-md text-body-md text-on-surface-variant">Absorbs photons to produce <span class="font-semibold text-on-surface">ATP and NADPH</span> energy carriers.</p>
+</li>
+<li class="flex gap-3 group">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed-dim mt-2.5 flex-shrink-0 group-hover:scale-150 transition-transform"></span>
+<p class="font-body-md text-body-md text-on-surface-variant">Water molecules are split, releasing <span class="font-semibold text-on-surface">oxygen</span> as a byproduct.</p>
+</li>
+</ul>
+</div>
+<div class="p-6 rounded-2xl bg-surface-container-lowest border border-surface-variant">
+<h4 class="font-title-md text-title-md text-tertiary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined">filter_drama</span>
+                                The Calvin Cycle
+                            </h4>
+<ul class="space-y-3">
+<li class="flex gap-3 group">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim mt-2.5 flex-shrink-0 group-hover:scale-150 transition-transform"></span>
+<p class="font-body-md text-body-md text-on-surface-variant">Takes place in the <span class="font-semibold text-on-surface">stroma</span>, independent of direct light.</p>
+</li>
+<li class="flex gap-3 group">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim mt-2.5 flex-shrink-0 group-hover:scale-150 transition-transform"></span>
+<p class="font-body-md text-body-md text-on-surface-variant">Uses carbon dioxide to synthesize <span class="font-semibold text-on-surface">G3P (glucose precursor)</span>.</p>
+</li>
+<li class="flex gap-3 group">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim mt-2.5 flex-shrink-0 group-hover:scale-150 transition-transform"></span>
+<p class="font-body-md text-body-md text-on-surface-variant">Requires chemical energy from the light-dependent phase.</p>
+</li>
+</ul>
+</div>
+</section>
+<!-- Scientific Equation Section -->
+<section class="bg-inverse-surface rounded-2xl p-6 text-inverse-on-surface flex flex-col md:flex-row items-center justify-between gap-6 overflow-hidden relative">
+<div class="absolute inset-0 shimmer opacity-5 pointer-events-none"></div>
+<div class="relative z-10 text-center md:text-left">
+<span class="text-label-md font-label-md text-outline-variant tracking-widest uppercase block mb-2">Chemical Equation</span>
+<div class="font-display-lg text-[24px] md:text-[32px] tracking-tight text-white">
+                                6CO<sub>2</sub> + 6H<sub>2</sub>O + <span class="text-tertiary-fixed">Light</span> → C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>
+</div>
+</div>
+<div class="w-20 h-20 bg-surface-variant/10 rounded-full flex items-center justify-center relative z-10 shrink-0">
+<span class="material-symbols-outlined text-tertiary-fixed text-[40px]">science</span>
+</div>
+</section>
+</div>
+</div>
+<!-- Footer Interaction -->
+<div class="bg-surface-container-low px-8 md:px-12 py-4 flex items-center justify-between border-t border-surface-variant">
+<span class="text-label-md font-label-md text-on-surface-variant italic">Refined from your lecture notes (March 15, 2024)</span>
+<button class="text-primary font-label-lg flex items-center gap-1 hover:underline">
+                    Expand Details
+                    <span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Secondary Insights Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<div class="glass-card p-6 rounded-3xl flex flex-col gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">quiz</span>
+</div>
+<h5 class="font-title-md text-title-md">Mock Quiz</h5>
+<p class="font-body-md text-body-md text-on-surface-variant">Generate 5 practice questions based on this summary.</p>
+<button class="mt-2 text-primary font-label-lg flex items-center gap-1 group">
+                    Start Quiz <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="glass-card p-6 rounded-3xl flex flex-col gap-3">
+<div class="w-10 h-10 rounded-xl bg-tertiary/10 text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">schema</span>
+</div>
+<h5 class="font-title-md text-title-md">Mind Map</h5>
+<p class="font-body-md text-body-md text-on-surface-variant">Visualize the structural connections of the photosynthesis cycle.</p>
+<button class="mt-2 text-primary font-label-lg flex items-center gap-1 group">
+                    View Map <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="glass-card p-6 rounded-3xl flex flex-col gap-3">
+<div class="w-10 h-10 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">forum</span>
+</div>
+<h5 class="font-title-md text-title-md">Ask Tutor</h5>
+<p class="font-body-md text-body-md text-on-surface-variant">Have a specific question about the Calvin Cycle?</p>
+<button class="mt-2 text-primary font-label-lg flex items-center gap-1 group">
+                    Open Chat <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-2 pb-2 pt-3 bg-surface-container-low shadow-md rounded-t-xl">
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-5 py-1 hover:bg-surface-container-high transition-colors rounded-xl">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-5 py-1">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">book_2</span>
+<span class="font-label-md text-label-md">Library</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-5 py-1 hover:bg-surface-container-high transition-colors rounded-xl">
+<span class="material-symbols-outlined">bnagent</span>
+<span class="font-label-md text-label-md">AI Tools</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-5 py-1 hover:bg-surface-container-high transition-colors rounded-xl">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</button>
+</nav>
+<!-- Floating Action Button -->
+<div class="fixed bottom-24 right-6 md:bottom-8 md:right-8 z-40">
+<button class="w-16 h-16 bg-secondary-container text-on-secondary-container rounded-2xl shadow-lg flex items-center justify-center hover:scale-105 active:scale-90 transition-all group">
+<span class="material-symbols-outlined text-[32px] group-hover:rotate-12 transition-transform">chat_spark</span>
+</button>
+</div>
+<script>
+        // Micro-interactions
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+
+        // Simple scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-4');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.glass-card, .rounded-\\[2rem\\]').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-4');
+            observer.observe(el);
+        });
+    </script>
+<style>
+        .ripple {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            pointer-events: none;
+        }
+        @keyframes ripple {
+            to { transform: scale(4); opacity: 0; }
+        }
+    </style>
+</body></html>

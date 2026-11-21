@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Register | ClassMitra</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#4b41e1",
+                    "on-surface": "#191c1e",
+                    "on-primary-container": "#eeefff",
+                    "inverse-surface": "#2d3133",
+                    "primary-container": "#2563eb",
+                    "secondary-fixed": "#e2dfff",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "outline-variant": "#c3c6d7",
+                    "surface-container-lowest": "#ffffff",
+                    "background": "#f7f9fb",
+                    "on-secondary-fixed": "#0f0069",
+                    "surface-container": "#eceef0",
+                    "inverse-primary": "#b4c5ff",
+                    "surface-variant": "#e0e3e5",
+                    "tertiary-container": "#007d55",
+                    "surface-bright": "#f7f9fb",
+                    "primary-fixed": "#dbe1ff",
+                    "on-tertiary-container": "#bdffdb",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#006242",
+                    "on-tertiary-fixed-variant": "#005236",
+                    "on-primary-fixed": "#00174b",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#645efb",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-secondary-container": "#fffbff",
+                    "surface": "#f7f9fb",
+                    "tertiary-fixed": "#6ffbbe",
+                    "on-secondary-fixed-variant": "#3323cc",
+                    "surface-tint": "#0053db",
+                    "on-tertiary-fixed": "#002113",
+                    "primary": "#004ac6",
+                    "on-surface-variant": "#434655",
+                    "on-error": "#ffffff",
+                    "secondary-fixed-dim": "#c3c0ff",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "surface-container-highest": "#e0e3e5",
+                    "surface-container-high": "#e6e8ea",
+                    "surface-container-low": "#f2f4f6",
+                    "on-background": "#191c1e",
+                    "surface-dim": "#d8dadc",
+                    "inverse-on-surface": "#eff1f3",
+                    "outline": "#737686",
+                    "tertiary-fixed-dim": "#4edea3"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "4px",
+                    "lg": "24px",
+                    "xs": "4px",
+                    "2xl": "48px",
+                    "xl": "32px",
+                    "margin-desktop": "32px",
+                    "sm": "8px",
+                    "margin-mobile": "16px",
+                    "md": "16px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "title-lg": ["Inter"],
+                    "title-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "label-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "title-lg": ["22px", {"lineHeight": "28px", "fontWeight": "500"}],
+                    "title-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0.15px", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.1px", "fontWeight": "500"}],
+                    "headline-md": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "display-lg": ["57px", {"lineHeight": "64px", "letterSpacing": "-0.25px", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.5px", "fontWeight": "500"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.25px", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "letterSpacing": "0.5px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb;
+            color: #191c1e;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .segmented-button-active {
+            background-color: #e2dfff;
+            color: #0f0069;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen flex flex-col items-center justify-center relative overflow-x-hidden">
+<!-- Decorative Background Elements -->
+<div class="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-primary/10 blur-[100px] -z-10"></div>
+<div class="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-secondary/10 blur-[100px] -z-10"></div>
+<!-- Main Content Canvas -->
+<main class="w-full max-w-[1200px] px-margin-mobile md:px-margin-desktop py-xl flex items-center justify-center min-h-screen">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-xl items-center w-full">
+<!-- Branding & Intro Section (Desktop only) -->
+<div class="hidden lg:flex flex-col space-y-md">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[48px]" style="font-variation-settings: 'FILL' 1;">school</span>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">ClassMitra</h1>
+</div>
+<h2 class="font-display-lg text-display-lg text-on-surface leading-tight">
+                    Empowering the <br/> <span class="text-secondary">Future of Education.</span>
+</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+                    Join a community of thousands of educators and learners using AI-driven insights to transform the classroom experience.
+                </p>
+<!-- Visual Asset -->
+<div class="relative w-full h-[400px] rounded-3xl overflow-hidden shadow-2xl mt-xl">
+<img class="w-full h-full object-cover" data-alt="A bright, modern classroom interior with a minimalist design. A diverse group of university students are collaborating around a sleek, white communal table with glowing blue digital tablets. Large floor-to-ceiling windows show a blurred campus garden. The lighting is soft, natural, and optimistic, featuring the primary blue and secondary purple accents of ClassMitra's branding. 3D digital render style with soft bokeh." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrnizk-7bhO7jzMozePEcV5lSyMYbrvLqNDC_Jc2eS9NTAHy-pDlKAP3_Lb970Ndg9bKXYj26YPMVpVm6TET-VkiK6YoaCVqpVv9aDYf_I71pzL7Q89d2zovaTWfq_n1QGOzf3fldaHMf7Mr54Yjr6JNBBhic5Fz4LJeVARDAiNc3u9XN683wYsQCHaIMup8Z4J6Ibo1Ts0nuCZTFbgP_k5ZBr04UqB5eIIBJ5B0shQVFptha7wjUh34UyU79jWGCL5aBASIYKKvSn"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+<div class="absolute bottom-md left-md p-md">
+<p class="text-white font-title-md text-title-md">"The best tool for collaborative learning I've used in years."</p>
+<p class="text-white/80 font-label-md text-label-md mt-xs">— Dr. Sarah Chen, University of Tech</p>
+</div>
+</div>
+</div>
+<!-- Registration Card -->
+<div class="flex justify-center w-full">
+<div class="glass-card w-full max-w-[480px] p-xl rounded-[32px] shadow-lg">
+<div class="flex flex-col items-center text-center mb-xl md:hidden">
+<span class="material-symbols-outlined text-primary text-[40px]" style="font-variation-settings: 'FILL' 1;">school</span>
+<h1 class="font-headline-sm text-headline-sm text-primary mt-xs">ClassMitra</h1>
+</div>
+<div class="mb-xl">
+<h2 class="font-headline-sm-mobile md:font-headline-sm text-headline-sm-mobile md:text-headline-sm text-on-surface">Create your account</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-xs">Start your journey with us today.</p>
+</div>
+<form class="space-y-md" id="registration-form">
+<!-- Role Selection (Segmented Button Style) -->
+<div class="space-y-sm">
+<label class="font-label-lg text-label-lg text-on-surface-variant px-1">I am a...</label>
+<div class="flex p-1 bg-surface-container-high rounded-full w-full">
+<button class="flex-1 py-2 px-4 rounded-full font-label-lg text-label-lg transition-all duration-300 segmented-button-active flex items-center justify-center gap-sm" id="role-student" onclick="setRole('student')" type="button">
+<span class="material-symbols-outlined text-[18px]">person</span>
+                                    Student
+                                </button>
+<button class="flex-1 py-2 px-4 rounded-full font-label-lg text-label-lg transition-all duration-300 text-on-surface-variant flex items-center justify-center gap-sm" id="role-teacher" onclick="setRole('teacher')" type="button">
+<span class="material-symbols-outlined text-[18px]">school</span>
+                                    Teacher
+                                </button>
+</div>
+<input id="role-input" name="role" type="hidden" value="student"/>
+</div>
+<!-- Full Name -->
+<div class="relative group">
+<input class="peer w-full h-14 px-4 pt-4 border border-outline rounded-xl font-body-lg text-body-lg bg-transparent focus:border-primary focus:ring-0 transition-all placeholder-transparent" id="full-name" placeholder=" " type="text"/>
+<label class="absolute left-4 top-1 text-on-surface-variant text-label-md transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-body-lg peer-focus:top-1 peer-focus:text-label-md peer-focus:text-primary" for="full-name">
+                                Full Name
+                            </label>
+</div>
+<!-- Email -->
+<div class="relative group">
+<input class="peer w-full h-14 px-4 pt-4 border border-outline rounded-xl font-body-lg text-body-lg bg-transparent focus:border-primary focus:ring-0 transition-all placeholder-transparent" id="email" placeholder=" " type="email"/>
+<label class="absolute left-4 top-1 text-on-surface-variant text-label-md transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-body-lg peer-focus:top-1 peer-focus:text-label-md peer-focus:text-primary" for="email">
+                                Email Address
+                            </label>
+</div>
+<!-- Passwords Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Password -->
+<div class="relative group">
+<input class="peer w-full h-14 px-4 pt-4 border border-outline rounded-xl font-body-lg text-body-lg bg-transparent focus:border-primary focus:ring-0 transition-all placeholder-transparent" id="password" placeholder=" " type="password"/>
+<label class="absolute left-4 top-1 text-on-surface-variant text-label-md transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-body-lg peer-focus:top-1 peer-focus:text-label-md peer-focus:text-primary" for="password">
+                                    Password
+                                </label>
+</div>
+<!-- Confirm Password -->
+<div class="relative group">
+<input class="peer w-full h-14 px-4 pt-4 border border-outline rounded-xl font-body-lg text-body-lg bg-transparent focus:border-primary focus:ring-0 transition-all placeholder-transparent" id="confirm-password" placeholder=" " type="password"/>
+<label class="absolute left-4 top-1 text-on-surface-variant text-label-md transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-body-lg peer-focus:top-1 peer-focus:text-label-md peer-focus:text-primary" for="confirm-password">
+                                    Confirm
+                                </label>
+</div>
+</div>
+<div class="flex items-start gap-sm px-1 py-xs">
+<input class="mt-1 rounded-sm border-outline text-primary focus:ring-primary" id="terms" type="checkbox"/>
+<label class="font-body-md text-body-md text-on-surface-variant" for="terms">
+                                I agree to the <a class="text-primary hover:underline" href="#">Terms of Service</a> and <a class="text-primary hover:underline" href="#">Privacy Policy</a>.
+                            </label>
+</div>
+<!-- Register Button -->
+<button class="w-full h-14 bg-primary text-on-primary rounded-full font-title-md text-title-md shadow-md hover:shadow-lg active:scale-95 transition-all flex items-center justify-center gap-sm" type="submit">
+                            Register
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<!-- Login Link -->
+<div class="text-center pt-md">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                                Already have an account? 
+                                <a class="text-primary font-title-md text-title-md hover:underline ml-1" href="#">Login</a>
+</p>
+</div>
+</form>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Credit -->
+<footer class="w-full py-md text-center">
+<p class="font-label-md text-label-md text-outline">© 2024 ClassMitra AI Education Services. All rights reserved.</p>
+</footer>
+<script>
+        function setRole(role) {
+            const studentBtn = document.getElementById('role-student');
+            const teacherBtn = document.getElementById('role-teacher');
+            const roleInput = document.getElementById('role-input');
+
+            if (role === 'student') {
+                studentBtn.classList.add('segmented-button-active');
+                studentBtn.classList.remove('text-on-surface-variant');
+                teacherBtn.classList.remove('segmented-button-active');
+                teacherBtn.classList.add('text-on-surface-variant');
+                roleInput.value = 'student';
+            } else {
+                teacherBtn.classList.add('segmented-button-active');
+                teacherBtn.classList.remove('text-on-surface-variant');
+                studentBtn.classList.remove('segmented-button-active');
+                studentBtn.classList.add('text-on-surface-variant');
+                roleInput.value = 'teacher';
+            }
+        }
+
+        document.getElementById('registration-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Subtle feedback for interaction
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalContent = btn.innerHTML;
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span>';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                alert('Account registration initiated! (Prototype logic)');
+                btn.innerHTML = originalContent;
+                btn.disabled = false;
+            }, 1500);
+        });
+    </script>
+</body></html>

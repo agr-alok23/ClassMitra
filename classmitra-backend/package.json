@@ -1,0 +1,18 @@
+{
+  "name": "classmitra-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Cloudflare Worker backend for ClassMitra AI using Groq API",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "node --test test/*.test.js"
+  },
+  "keywords": [],
+  "author": "ClassMitra",
+  "license": "MIT",
+  "devDependencies": {
+    "wrangler": "^3.90.0"
+  }
+}

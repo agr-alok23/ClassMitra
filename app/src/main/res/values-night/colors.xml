@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Background & Surfaces -->
+    <color name="background">#191C1E</color>
+    <color name="white">#191C1E</color> <!-- Many layouts use @color/white for cards -->
+    <color name="surface">#191C1E</color>
+    <color name="surface_bright">#2D3133</color>
+    <color name="surface_dim">#0F1112</color>
+    <color name="surface_container_lowest">#0F1112</color>
+    <color name="surface_container_low">#1D2022</color>
+    <color name="surface_container">#212426</color>
+    <color name="surface_container_high">#2B2E30</color>
+    <color name="surface_container_highest">#36393B</color>
+    <color name="surface_variant">#434655</color>
+
+    <!-- Brand Colors -->
+    <color name="primary">#B4C5FF</color>
+    <color name="on_primary">#002B75</color>
+    <color name="primary_container">#003EA8</color>
+    <color name="on_primary_container">#DBE1FF</color>
+    <color name="primary_fixed">#DBE1FF</color>
+    <color name="on_primary_fixed">#00174B</color>
+
+    <color name="secondary">#C3C0FF</color>
+    <color name="on_secondary">#252477</color>
+    <color name="secondary_container">#3D3C8F</color>
+    <color name="on_secondary_container">#E2DFFF</color>
+    <color name="secondary_fixed">#E2DFFF</color>
+    <color name="on_secondary_fixed">#0F0069</color>
+
+    <color name="tertiary">#6FFBBE</color>
+    <color name="on_tertiary">#003824</color>
+    <color name="tertiary_container">#005236</color>
+    <color name="on_tertiary_container">#8BFFDA</color>
+    <color name="mitra_purple">#D0BCFF</color>
+    <color name="chat_mitra_bg">#2B2E30</color>
+    <color name="primary_light">#1D2022</color>
+
+    <!-- Text Colors -->
+    <color name="on_surface">#E1E2E5</color>
+    <color name="on_surface_variant">#C3C6D7</color>
+    <color name="text_primary">#E1E2E5</color>
+    <color name="text_secondary">#C3C6D7</color>
+
+    <!-- UI Elements -->
+    <color name="outline">#8D9199</color>
+    <color name="outline_variant">#434655</color>
+    <color name="error">#FFB4AB</color>
+    <color name="field_background">#2B2E30</color>
+
+    <!-- Legacy/Fallback -->
+    <color name="black">#FFFFFF</color>
+    <color name="gray">#C3C6D7</color>
+</resources>

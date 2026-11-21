@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Background & Surfaces -->
+    <color name="background">#F7F9FB</color>
+    <color name="white">#FFFFFF</color>
+    <color name="surface">#F7F9FB</color>
+    <color name="surface_bright">#F7F9FB</color>
+    <color name="surface_dim">#D8DADC</color>
+    <color name="surface_container_lowest">#FFFFFF</color>
+    <color name="surface_container_low">#F2F4F6</color>
+    <color name="surface_container">#ECEEF0</color>
+    <color name="surface_container_high">#E6E8EA</color>
+    <color name="surface_container_highest">#E0E3E5</color>
+    <color name="surface_variant">#E0E3E5</color>
+
+    <!-- Brand Colors (Stitch Reference) -->
+    <color name="primary">#004AC6</color>
+    <color name="on_primary">#FFFFFF</color>
+    <color name="primary_container">#2563EB</color>
+    <color name="on_primary_container">#EEEFFF</color>
+
+    <color name="secondary">#4B41E1</color>
+    <color name="on_secondary">#FFFFFF</color>
+    <color name="secondary_container">#645EFB</color>
+    <color name="on_secondary_container">#FFFBFF</color>
+
+    <color name="tertiary">#006242</color>
+    <color name="on_tertiary">#FFFFFF</color>
+    <color name="tertiary_container">#007D55</color>
+    <color name="on_tertiary_container">#BDFFDB</color>
+
+    <color name="outline">#737686</color>
+    <color name="outline_variant">#C3C6D7</color>
+    <color name="on_surface">#191C1E</color>
+    <color name="on_surface_variant">#434655</color>
+    <color name="error">#BA1A1A</color>
+    <color name="field_background">#00000000</color>
+
+    <!-- Additional Brand Colors -->
+    <color name="mitra_purple">#645EFB</color>
+
+    <!-- Text Colors (Referenced in Layouts) -->
+    <color name="text_primary">#191C1E</color>
+    <color name="text_secondary">#434655</color>
+
+    <!-- Legacy/Fallback -->
+    <color name="black">#000000</color>
+    <color name="gray">#808080</color>
+</resources>
