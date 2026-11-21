@@ -57,3 +57,37 @@ This Cloudflare Worker acts as the secure backend proxy for ClassMitra, routing 
    npx wrangler deploy
    ```
    Wrangler will output your production URL, for example: `https://classmitra-backend.<your-subdomain>.workers.dev`.
+
+## 📱 App Screenshots
+
+### Onboarding & Authentication
+
+| Welcome Screen | Welcome Screen |
+|---|---|
+| <img src="screenshots/opening ui.png" width="200"/> | <img src="screenshots/opening ui2.png" width="200"/> |
+
+| Login | Registration |
+|---|---|
+| <img src="screenshots/login.png" width="200"/> | <img src="screenshots/login2.png" width="200"/> |
+
+### Student Experience
+
+| Student Dashboard | Settings |
+|---|---|
+| <img src="screenshots/Student Dashboard.png" width="200"/> | <img src="screenshots/Settings.png" width="200"/> |
+
+### AI Learning Features
+
+| AI Chat | PDF Summarization |
+|---|---|
+| <img src="screenshots/ai-chat.png" width="200"/> | <img src="screenshots/pdf-summary.png" width="200"/> |
+
+| Quiz Generator | Flashcard Generator |
+|---|---|
+| <img src="screenshots/Quiz-Generater.png" width="200"/> | <img src="screenshots/Flashcard Generator.png" width="200"/> |
+
+### Additional Features
+
+| Role Selection | Teacher Dashboard | Dark Mode |
+|---|---|---|
+| <img src="screenshots/ROLE.png" width="200"/> | <img src="screenshots/Teacher DAsHboard.png" width="200"/> | <img src="screenshots/Darkmode.png" width="200"/> |
